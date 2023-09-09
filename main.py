@@ -2,9 +2,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+#uvicorn main:app --reload
+
 from fastapi.responses import FileResponse
-
-
 @app.get("/")
 async def root():
     return FileResponse("index.html")
