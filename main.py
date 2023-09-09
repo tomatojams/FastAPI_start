@@ -1,22 +1,19 @@
 from fastapi import FastAPI
-
-app = FastAPI()
-# uvicorn main:app --reload
-
 from fastapi.responses import FileResponse
 
+from pydantic import BaseModel
 
-@app.get("/")
+joy = FastAPI()
+
+
+@joy.get("/")
 async def root():
     return FileResponse("index.html")
 
 
-@app.get("/hello/{name}")
+@joy.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
-
-
-from pydantic import BaseModel
 
 
 class UsrData(BaseModel):
@@ -24,7 +21,7 @@ class UsrData(BaseModel):
     phone: str
 
 
-@app.get("/send")
+@joy.get("/send")
 async def send(data: UsrData):
     print(data)
     return "전송완료"
