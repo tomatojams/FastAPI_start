@@ -2,5 +2,13 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "python.analysis.typeCheckingMode": "basic"
+  "python.formatting.useTabCharacter": false,
+  "python.formatting.formatOnSave": true,
+  "python.formatting.formatOnType": true,
+  "python.sortImports.executablePath": "F:/Anaconda3_envs/FastAPI/Scripts",
+  "isort.args": [
+    "-rc"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "Pylance",
 }
